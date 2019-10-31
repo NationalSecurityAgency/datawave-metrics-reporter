@@ -1,6 +1,7 @@
 package datawave.metrics;
 
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.Socket;
@@ -22,6 +23,8 @@ import com.codahale.metrics.Snapshot;
 import com.codahale.metrics.Timer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 /**
  * Reports Dropwizard metrics to Timely.
@@ -196,7 +199,7 @@ public class TimelyMetricsReporter extends ScheduledReporter {
                 try {
                     connectTime = System.currentTimeMillis();
                     sock = new Socket(timelyHost, timelyPort);
-                    out = new PrintWriter(sock.getOutputStream(), false);
+                    out = new PrintWriter(new OutputStreamWriter(sock.getOutputStream(), UTF_8), false);
                     backoff = 2000;
                     logger.info("Connected to Timely at {}:{}", timelyHost, timelyPort);
                     connected = true;
