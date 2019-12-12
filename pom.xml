@@ -4,7 +4,7 @@
     <parent>
         <groupId>gov.nsa.datawave.microservice</groupId>
         <artifactId>datawave-microservice-parent</artifactId>
-        <version>1.7</version>
+        <version>1.8</version>
         <relativePath />
     </parent>
     <artifactId>metrics-reporter</artifactId>
@@ -22,9 +22,9 @@
         <url>https://github.com/NationalSecurityAgency/datawave-metrics-reporter</url>
     </scm>
     <properties>
-        <version.commons-io>2.5</version.commons-io>
-        <version.dropwizard-metrics>3.2.6</version.dropwizard-metrics>
-        <version.httpclient>4.5.6</version.httpclient>
+        <version.commons-io>2.6</version.commons-io>
+        <version.dropwizard-metrics>4.1.2</version.dropwizard-metrics>
+        <version.httpclient>4.5.10</version.httpclient>
         <version.javastatsd>3.1.0</version.javastatsd>
     </properties>
     <dependencyManagement>
