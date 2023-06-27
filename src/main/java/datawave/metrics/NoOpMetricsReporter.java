@@ -1,5 +1,8 @@
 package datawave.metrics;
 
+import java.util.SortedMap;
+import java.util.concurrent.TimeUnit;
+
 import com.codahale.metrics.Counter;
 import com.codahale.metrics.Gauge;
 import com.codahale.metrics.Histogram;
@@ -8,8 +11,6 @@ import com.codahale.metrics.MetricFilter;
 import com.codahale.metrics.MetricRegistry;
 import com.codahale.metrics.ScheduledReporter;
 import com.codahale.metrics.Timer;
-import java.util.SortedMap;
-import java.util.concurrent.TimeUnit;
 
 public class NoOpMetricsReporter extends ScheduledReporter {
     
