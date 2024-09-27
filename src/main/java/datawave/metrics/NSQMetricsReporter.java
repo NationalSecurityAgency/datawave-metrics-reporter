@@ -87,7 +87,11 @@ public class NSQMetricsReporter extends TimelyMetricsReporter {
         try {
             super.stop();
         } finally {
-            client.getConnectionManager().shutdown();
+            try {
+                client.close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 }
